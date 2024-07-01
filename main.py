@@ -12,6 +12,8 @@
 #https://djangoforbeginners.com/hello-world/
 
 #venv = .venv
+#python -m venv .venv
+#.venv\Scripts\Activate.ps1
 #(.venv) $ python -m pip install django~=4.2.0
 #(.venv) $ python -m pip install black
 
