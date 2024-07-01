@@ -6,3 +6,10 @@ python manage.py startapp appname
 update django_project/settings.py to alert Django to the new app, posts, by adding it to the bottom of the INSTALLED_APPS section.
 python manage.py migrate (python manage.py makemigrations if needed)
 python manage.py createsuperuser
+
+PER LE IMMAGINI:
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media' in settings.py
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) nel main urls
+<img src="{{ post.img.url }}">
+gg

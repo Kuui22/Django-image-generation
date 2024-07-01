@@ -1,10 +1,16 @@
 {% extends "base.html" %}
+{% load static %}
+
 
 {% block content %}
 <h1>Homepage</h1>
 <ul>
     {% for post in post_list %}
-    <li>{{ post.text }}</li>
+    {% if post.img %}
+        <li>{{ post.text}} <br><img src="{{ post.img.url }}"> </li>
+    {% else %}
+        <li>{{ post.text}} </li>
+    {% endif %}
     {% endfor %}
 </ul>
 {% endblock content %}
