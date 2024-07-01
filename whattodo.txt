@@ -1,0 +1,8 @@
+set up a new Python virtual environment and activate it ( python -m venv .venv)
+.venv\Scripts\Activate.ps1
+install Django and Black in the new virtual environment (python -m pip install django~=4.2.0 etc)
+django-admin startproject django_projectname .
+python manage.py startapp appname
+update django_project/settings.py to alert Django to the new app, posts, by adding it to the bottom of the INSTALLED_APPS section.
+python manage.py migrate (python manage.py makemigrations if needed)
+python manage.py createsuperuser
