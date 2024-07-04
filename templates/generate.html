@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<h1>ciaossu</h1>
+<form method="post" action="{% url 'trigger_task_view' %}">
+    {% csrf_token %}
+    <button type="submit">Trigger Task</button>
+</form>
+<form method="post" action="{% url 'trigger_generate' %}">
+    {% csrf_token %}
+    <input type="text" name="text" placeholder="Enter text here" required>
+    <button type="submit">Trigger Generate</button>
+</form>
+{% endblock content %}

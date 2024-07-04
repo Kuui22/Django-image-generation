@@ -1,5 +1,4 @@
-set up a new Python virtual environment and activate it ( python -m venv .venv)
-.venv\Scripts\Activate.ps1
+set up a new Python virtual environment and activate it ( python -m venv .venv and then .venv\Scripts\Activate.ps1) 
 install Django and Black in the new virtual environment (python -m pip install django~=4.2.0 etc)
 django-admin startproject django_projectname .
 python manage.py startapp appname
@@ -13,3 +12,15 @@ MEDIA_ROOT = BASE_DIR / 'media' in settings.py
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) nel main urls
 <img src="{{ post.img.url }}">
 gg
+
+
+
+aggiornare requirements: pip freeze > requirements.txt 
+
+
+CELERY:
+creare celery.py con i settings nella main app
+creare tasks.py nelle altre app con le task da fare
+importare la task nelle views per usarla in una funzione definita nelle views
+triggerare la funzione nelle views dagli urls
+action="{% url 'nometaskviews' %}" per usarla
