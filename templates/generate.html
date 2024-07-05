@@ -5,7 +5,11 @@
 <h1>ciaossu</h1>
 <form method="post" action="{% url 'trigger_task_view' %}">
     {% csrf_token %}
-    <button type="submit">Trigger Task</button>
+    <button type="submit">Test logging</button>
+</form>
+<form method="post" action="{% url 'trigger_test_folder' %}">
+    {% csrf_token %}
+    <button type="submit">Test folder</button>
 </form>
 <form method="post" action="{% url 'trigger_generate' %}">
     {% csrf_token %}

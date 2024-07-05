@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseBadRequest,JsonResponse
 from django.views.generic import ListView,TemplateView
 from .models import Post
-from .tasks import log_message_task,generate
+from .tasks import log_message_task,generate,testfolder_task
 # Create your views here.
 #def home_page_view(request):
 #    return HttpResponse("Hello, World!")
@@ -19,6 +19,9 @@ def trigger_generate(request):
         generate.delay(text)
     return render(request, 'generate.html')
 
+def trigger_test_folder(request):
+    testfolder_task.delay()  
+    return render(request, 'generate.html')
 
 class HomePageView(ListView):
     model = Post
