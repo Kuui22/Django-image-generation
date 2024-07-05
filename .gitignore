@@ -1,1 +1,5 @@
 .venv/
+media/
+stable1-5.zip
+static/stable1-5
+stablexl/__pycache__
