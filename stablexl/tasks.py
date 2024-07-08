@@ -45,6 +45,7 @@ def rungeneration(prompt:str="A cat on a armchair high quality hd"):
         pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16, safety_checker=None)
         #pipe.enable_freeu(s1=0.9, s2=0.2, b1=1.5, b2=1.6) # https://huggingface.co/docs/diffusers/main/en/using-diffusers/image_quality
         pipe.enable_model_cpu_offload()
+        # pipe.enable_sequential_cpu_offload() #this uses even less memory but it is slower
         
         image = pipe(
             prompt,
@@ -69,6 +70,7 @@ def rungeneration(prompt:str="A cat on a armchair high quality hd"):
         
         pipe.maybe_free_model_hooks()
         del pipe
+        del image
         flush()
         
         return mediapath
